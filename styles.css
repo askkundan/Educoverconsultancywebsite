@@ -32,3 +32,4 @@ a:focus-visible,button:focus-visible,.field:focus-visible{outline:3px solid #082
 .msg.err{color:#9b1c1c}
 .wa{position:fixed;right:20px;bottom:20px;z-index:20;padding:12px 18px;border-radius:999px;background:#00BF63;color:#082F56;font-weight:700;text-decoration:none;box-shadow:0 2px 10px rgba(8,47,86,.25)}
 
+.ft a{color:#F5F8F6}
