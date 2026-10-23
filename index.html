@@ -1,1010 +1,138 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Educover | Education Loan & Study Abroad Support</title>
-  <meta name="description" content="Educover helps students with education loans, study abroad admissions, visa guidance and financial assistance.">
-  <style>
-    :root {
-      --primary: #123c8c;
-      --secondary: #2364d2;
-      --accent: #f5a623;
-      --light: #f4f7fc;
-      --dark: #17233c;
-      --muted: #65738b;
-      --white: #fff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--dark);
-      line-height: 1.6;
-      background: var(--white);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .wrap {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: white;
-      box-shadow: 0 2px 14px #0000000d;
-    }
-
-    nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 25px;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .mark {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      color: white;
-      background: var(--secondary);
-    }
-
-    .navlinks {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .navlinks a:hover {
-      color: var(--secondary);
-    }
-
-    .btn {
-      display: inline-block;
-      border: 0;
-      border-radius: 8px;
-      padding: 13px 22px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .btn-primary {
-      color: white;
-      background: var(--secondary);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 1px solid #cbd5e5;
-      color: var(--primary);
-      background: white;
-    }
-
-    .hero {
-      padding: 85px 0;
-      background: linear-gradient(120deg, #f2f6ff, #fff 65%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 6px 13px;
-      border-radius: 30px;
-      background: #e2ecff;
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(36px, 5vw, 58px);
-      line-height: 1.13;
-      letter-spacing: -1.5px;
-      margin-bottom: 22px;
-    }
-
-    h1 span {
-      color: var(--secondary);
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 28px;
-      max-width: 580px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .hero-card {
-      background: white;
-      padding: 35px;
-      border-radius: 22px;
-      box-shadow: 0 20px 55px #1c43831c;
-      border: 1px solid #e8eef8;
-    }
-
-    .hero-card h2 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .hero-card > p {
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    .feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin: 18px 0;
-    }
-
-    .feature-icon {
-      width: 42px;
-      height: 42px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #eaf1ff;
-      font-size: 21px;
-    }
-
-    .feature h3 {
-      font-size: 16px;
-      margin-bottom: 3px;
-    }
-
-    .feature p {
-      font-size: 13px;
-      margin: 0;
-    }
-
-    section {
-      padding: 75px 0;
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 42px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(28px, 4vw, 39px);
-      line-height: 1.2;
-      margin-bottom: 14px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      padding: 28px;
-      border: 1px solid #e5eaf2;
-      border-radius: 16px;
-      background: white;
-      transition: .2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 35px #152e5c12;
-    }
-
-    .card-icon {
-      font-size: 30px;
-      margin-bottom: 14px;
-    }
-
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .soft-section {
-      background: var(--light);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .step {
-      text-align: center;
-      padding: 25px 18px;
-    }
-
-    .step-number {
-      width: 52px;
-      height: 52px;
-      margin: 0 auto 17px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: white;
-      background: var(--secondary);
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    .step h3 {
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .destinations {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .destination {
-      padding: 15px 25px;
-      background: white;
-      border: 1px solid #e1e8f3;
-      border-radius: 12px;
-      font-weight: 700;
-    }
-
-    .cta {
-      padding: 55px 35px;
-      border-radius: 22px;
-      color: white;
-      background: linear-gradient(120deg, var(--primary), var(--secondary));
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: clamp(28px, 4vw, 38px);
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 24px;
-      color: #e0e9ff;
-    }
-
-    .cta .btn {
-      color: var(--primary);
-      background: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: start;
-    }
-
-    .contact-info {
-      padding: 30px;
-      background: var(--light);
-      border-radius: 16px;
-    }
-
-    .contact-info h3 {
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
-    .contact-item {
-      margin-bottom: 20px;
-    }
-
-    .contact-item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .contact-item a {
-      color: var(--secondary);
-      overflow-wrap: anywhere;
-    }
-
-    .contact-form {
-      padding: 30px;
-      border: 1px solid #e5eaf2;
-      border-radius: 16px;
-    }
-
-    .contact-form h3 {
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #d5deeb;
-      border-radius: 8px;
-      font: inherit;
-      background: white;
-    }
-
-    .form-group textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    footer {
-      padding: 55px 0 20px;
-      color: #dce5f7;
-      background: #101d35;
-    }
-
-    .foot {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 30px;
-      margin-bottom: 35px;
-    }
-
-    .foot .brand {
-      color: white;
-      margin-bottom: 15px;
-    }
-
-    .foot p {
-      color: #b7c5df;
-      font-size: 14px;
-      margin-bottom: 13px;
-    }
-
-    .foot h3 {
-      color: white;
-      margin-bottom: 15px;
-      font-size: 17px;
-    }
-
-    .foot a:hover {
-      color: white;
-    }
-
-    .fine {
-      border-top: 1px solid #ffffff20;
-      padding-top: 20px;
-      color: #9eacc5;
-      font-size: 12px;
-      text-align: center;
-    }
-
-    @media (max-width: 850px) {
-      .navlinks {
-        gap: 12px;
-      }
-
-      .hero-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
-
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .foot {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-wrap: wrap;
-        padding: 13px 0;
-      }
-
-      .navlinks {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        font-size: 12px;
-      }
-
-      .navlinks .btn {
-        padding: 8px 12px;
-      }
-
-      .cards,
-      .steps,
-      .foot {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 55px 0;
-      }
-
-      .hero-card,
-      .contact-info,
-      .contact-form {
-        padding: 23px;
-      }
-
-      .cta {
-        padding: 40px 22px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Educover | Education Loans, Visa and Admission Support</title>
+<meta name="description" content="Compare education loans from multiple banks and NBFCs, with visa and admission support. Free guidance for Indian students studying abroad or in India.">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+<div class="pg">
 
-  <header>
-    <div class="wrap">
-      <nav>
-        <a class="brand" href="#home">
-          <span class="mark">E</span> Educover
-        </a>
+<div class="nav">
+<div class="ph" style="width:140px;height:44px">[LOGO]</div>
+<a href="education-loan.html">Education Loan</a><a href="visa-assistance.html">Visa Assistance</a><a href="admission-support.html">Admission Support</a><a href="countries.html">Countries</a><a href="how-it-works.html">How It Works</a><a href="resources.html">Resources</a><a href="about.html">About</a>
+<span style="margin-left:auto;font-size:15px">8750082588</span>
+<a class="btn" href="contact.html">Book a Call</a>
+</div>
 
-        <div class="navlinks">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#about">About Us</a>
-          <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
-          <a class="btn btn-primary" href="#contact">Get Started</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+<div class="sec"><div class="in grid hero" style="grid-template-columns:1.2fr 1fr;align-items:center;gap:48px">
+<div>
+<p class="tag">Education loans · Visa · Admission</p>
+<h1 style="font-size:52px;line-height:1.1;margin-bottom:16px">One application. Multiple lenders. Your study loan, sorted.</h1>
+<p class="sub" style="margin-bottom:24px">Compare banks and NBFCs in one place, with visa and admission support for Indian students going abroad or studying in India. [Draft copy]</p>
+<div class="row" style="margin-bottom:28px"><a class="btn" href="#eligibility">Check Eligibility</a><a class="btn btn2" href="contact.html">Talk to an Expert</a></div>
+<div class="row"><span class="box" style="padding:8px 14px">Multiple lenders</span><span class="box" style="padding:8px 14px">Abroad &amp; India</span><span class="box" style="padding:8px 14px">Visa support</span><span class="box" style="padding:8px 14px">Admission support</span></div>
+</div>
+<form class="box" data-lead="hero-callback" novalidate>
+<h3>Get a free callback</h3>
+<p style="color:#063720;margin-bottom:16px">Two quick fields, then an expert calls you.</p>
+<label><span class="tag" style="margin:0">Loan amount</span><select class="field" name="loan_amount" required><option value="">Select amount</option><option>Up to ₹10 lakh</option><option>₹10–20 lakh</option><option>₹20–50 lakh</option><option>Above ₹50 lakh</option></select></label>
+<label><span class="tag" style="margin:0">Country of study</span><select class="field" name="country" required><option value="">Select country</option><option>USA</option><option>UK</option><option>Canada</option><option>Germany</option><option>Australia</option><option>Ireland</option><option>Other</option></select></label>
+<label><span class="tag" style="margin:0">Mobile number</span><input class="field" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" placeholder="+91" required></label>
+<p class="msg" role="status" aria-live="polite"></p>
+<button class="btn" type="submit" style="display:block;width:100%">Request Callback</button>
+</form>
+</div></div>
 
-  <main>
+<div class="sec alt" style="padding:40px 48px"><div class="in">
+<p class="tag" style="text-align:center;display:block">Our lending partners</p>
+<div class="grid g5"><div class="ph" style="height:72px">[Avanse logo]</div><div class="ph" style="height:72px">[Credila logo]</div><div class="ph" style="height:72px">[InCred logo]</div><div class="ph" style="height:72px">[Auxilo logo]</div><div class="ph" style="height:72px">[Poonawalla Fincorp logo]</div></div>
+</div></div>
 
-    <section class="hero" id="home">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Your Education. Your Future.</span>
+<div class="sec"><div class="in">
+<p class="tag">Why Educover</p><h2>Why students and parents choose us</h2><p class="sub">One line each. Final copy after Educover confirms what it actually offers.</p>
+<div class="grid g3">
+<div class="box"><h3>Multiple lenders, one place</h3><p>[Compare options instead of visiting each lender]</p></div>
+<div class="box"><h3>Collateral &amp; non-collateral</h3><p>[Options matched to your profile]</p></div>
+<div class="box"><h3>Free expert guidance</h3><p>No charges to students. A counsellor stays with you from start to sanction.</p></div>
+<div class="box"><h3>Visa-ready documents</h3><p>[Loan paperwork aligned with visa needs]</p></div>
+<div class="box"><h3>Admission support</h3><p>[Help with university applications]</p></div>
+<div class="box"><h3>Clear process</h3><p>[Know every step and document upfront]</p></div>
+</div></div></div>
 
-          <h1>
-            Your Dreams Deserve
-            <span>Better Opportunities</span>
-          </h1>
+<div class="sec alt"><div class="in">
+<p class="tag">What we do</p><h2>Three services, one team</h2><p class="sub">Loan is the core service. Visa and admission support sit alongside it.</p>
+<div class="grid" style="grid-template-columns:1.4fr 1fr 1fr">
+<div class="box"><h3>Education Loan</h3><p style="margin-bottom:12px">Banks and NBFCs for studying abroad or in India.</p><p>• Loan for Abroad<br>• Loan in India<br>• Eligibility and EMI tools</p><p style="margin-top:16px"><a class="btn btn2" href="#">Explore loans</a></p></div>
+<div class="box"><h3>Visa Assistance</h3><p style="margin-bottom:12px">[Short description]</p><p style="margin-top:16px"><a class="btn btn2" href="#">Learn more</a></p></div>
+<div class="box"><h3>Admission Support</h3><p style="margin-bottom:12px">[Short description]</p><p style="margin-top:16px"><a class="btn btn2" href="#">Learn more</a></p></div>
+</div></div></div>
 
-          <p>
-            Educover helps students move forward with education loan
-            assistance, admission support and visa guidance.
-            We make your study journey easier to understand and manage.
-          </p>
+<div class="sec"><div class="in">
+<div class="grid g4" style="text-align:center">
+<div><p class="num">[XX+]</p><p>Students guided</p></div><div><p class="num">[XX]</p><p>Years of experience</p></div><div><p class="num">[XX]</p><p>Lending partners</p></div><div><p class="num">[XX+]</p><p>Countries covered</p></div>
+</div>
+<p style="text-align:center;color:#063720;margin-top:16px;font-size:14px">Only verified Educover numbers go here.</p>
+</div></div>
 
-          <div class="hero-buttons">
-            <a class="btn btn-primary" href="#contact">Talk to Our Team</a>
-            <a class="btn btn-outline" href="#services">Explore Services</a>
-          </div>
-        </div>
+<div class="sec alt"><div class="in">
+<p class="tag">How it works</p><h2>From first call to disbursement</h2><p class="sub">Timelines to be confirmed with Educover.</p>
+<div class="grid g4">
+<div class="box"><p class="tag">[Day X]</p><h3>1. Free consultation</h3><p>[Understand course, country, budget]</p></div>
+<div class="box"><p class="tag">[Day X]</p><h3>2. Profile and lender match</h3><p>[Shortlist suitable lenders]</p></div>
+<div class="box"><p class="tag">[Day X]</p><h3>3. Documentation</h3><p>[Checklist and file preparation]</p></div>
+<div class="box"><p class="tag">[Day X]</p><h3>4. Sanction and disbursement</h3><p>[Follow up until funds are released]</p></div>
+</div></div></div>
 
-        <div class="hero-card">
-          <h2>Study Without Financial Confusion</h2>
-          <p>
-            Get guidance at every step of your education journey.
-          </p>
+<div class="sec"><div class="in">
+<p class="tag">Countries</p><h2>Where will you study?</h2><p class="sub">Each tile will open a country page in Phase 2.</p>
+<div class="grid g6"><div class="ph" style="height:110px">USA</div><div class="ph" style="height:110px">UK</div><div class="ph" style="height:110px">Canada</div><div class="ph" style="height:110px">Germany</div><div class="ph" style="height:110px">Australia</div><div class="ph" style="height:110px">Ireland</div></div>
+<p style="margin-top:20px"><a class="btn btn2" href="#">View all countries</a></p>
+</div></div>
 
-          <div class="feature">
-            <div class="feature-icon">🎓</div>
-            <div>
-              <h3>Education Loan Assistance</h3>
-              <p>Explore suitable education financing options.</p>
-            </div>
-          </div>
+<div class="sec alt"><div class="in">
+<p class="tag">Success stories</p><h2>Students we have helped</h2><p class="sub">Real stories only, with the student's permission.</p>
+<div class="grid g3">
+<div class="box"><div class="ph" style="width:64px;height:64px;border-radius:50%;margin-bottom:12px">[Photo]</div><h3>[Student name]</h3><p style="color:#063720">[Course, University, Country]</p><p style="margin:12px 0">[Short quote]</p><p class="tag">[Loan amount · Lender · Timeline]</p></div>
+<div class="box"><div class="ph" style="width:64px;height:64px;border-radius:50%;margin-bottom:12px">[Photo]</div><h3>[Student name]</h3><p style="color:#063720">[Course, University, Country]</p><p style="margin:12px 0">[Short quote]</p><p class="tag">[Loan amount · Lender · Timeline]</p></div>
+<div class="box"><div class="ph" style="width:64px;height:64px;border-radius:50%;margin-bottom:12px">[Photo]</div><h3>[Student name]</h3><p style="color:#063720">[Course, University, Country]</p><p style="margin:12px 0">[Short quote]</p><p class="tag">[Loan amount · Lender · Timeline]</p></div>
+</div></div></div>
 
-          <div class="feature">
-            <div class="feature-icon">🌍</div>
-            <div>
-              <h3>Study Abroad Guidance</h3>
-              <p>Support for your international education plans.</p>
-            </div>
-          </div>
+<div class="sec"><div class="in">
+<div class="lh">
+<div><p class="tag">Leadership</p><h2>Meet the <em>people</em> behind Educover.</h2></div>
+<div><p class="sub" style="margin-bottom:16px">[One or two lines about Educover's leadership and experience in education finance.]</p><a href="#" style="color:#082F56;font-weight:600;text-decoration:none">Talk to an expert &rarr;</a></div>
+</div>
+<div class="pt">
+<div><div class="ph">[CEO photo: black &amp; white portrait]</div><h3 class="pn">Raunak</h3><p style="color:#063720">CEO &amp; Co-founder</p><a href="#" class="li"><b>in</b> Connect on LinkedIn</a></div>
+<div><div class="ph">[CBO photo: black &amp; white portrait]</div><h3 class="pn">Shushma</h3><p style="color:#063720">CBO &amp; Co-founder</p><a href="#" class="li"><b>in</b> Connect on LinkedIn</a></div>
+<div><div class="ph">[Ashutosh photo: black &amp; white portrait]</div><h3 class="pn">Ashutosh</h3><p style="color:#063720">Operations Director</p><a href="#" class="li"><b>in</b> Connect on LinkedIn</a></div>
+<div><div class="ph">[Gautam photo: black &amp; white portrait]</div><h3 class="pn">Gautam</h3><p style="color:#063720">Vice President</p><a href="#" class="li"><b>in</b> Connect on LinkedIn</a></div>
+</div>
+</div></div>
 
-          <div class="feature">
-            <div class="feature-icon">📄</div>
-            <div>
-              <h3>Admission & Visa Support</h3>
-              <p>Guidance with documentation and applications.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="sec alt"><div class="in" style="max-width:860px">
+<p class="tag">FAQ</p><h2>Questions worth asking</h2>
+<div class="box" style="margin-bottom:12px"><h3>What does an education loan cover?</h3></div>
+<div class="box" style="margin-bottom:12px"><h3>Do I need collateral or a co-applicant?</h3></div>
+<div class="box" style="margin-bottom:12px"><h3>Which documents do I need?</h3></div>
+<div class="box" style="margin-bottom:12px"><h3>Can I apply before getting admission?</h3></div>
+<div class="box" style="margin-bottom:12px"><h3>Does Educover charge students?</h3></div>
+</div></div>
 
-    <section id="services">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Our Services</h2>
-          <p>
-            Practical guidance to help students plan their education
-            and take the next step with confidence.
-          </p>
-        </div>
+<div class="sec" id="eligibility"><div class="in grid" style="grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+<div><p class="tag">Free eligibility check</p><h2>Find out which lenders fit your profile</h2><p class="sub">Fill the form and an expert will contact you. Educover assists with applications; loans are sanctioned by the lender.</p><div class="ph" style="height:160px">[WhatsApp and phone options]</div></div>
+<form class="box" data-lead="eligibility" novalidate>
+<input class="field" name="name" autocomplete="name" aria-label="Full name" placeholder="Full name" required><input class="field" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" aria-label="Mobile number" placeholder="Mobile number" required><input class="field" name="email" type="email" autocomplete="email" aria-label="Email" placeholder="Email"><select class="field" name="country" aria-label="Country of study" required><option value="">Country of study</option><option>USA</option><option>UK</option><option>Canada</option><option>Germany</option><option>Australia</option><option>Ireland</option><option>Other</option></select><select class="field" name="loan_amount" aria-label="Loan amount" required><option value="">Loan amount</option><option>Up to ₹10 lakh</option><option>₹10–20 lakh</option><option>₹20–50 lakh</option><option>Above ₹50 lakh</option></select><input class="field" name="course" aria-label="Course and university" placeholder="Course and university (optional)">
+<p class="msg" role="status" aria-live="polite"></p>
+<button class="btn" type="submit" style="display:block;width:100%">Check Eligibility</button>
+</form></div></div>
 
-        <div class="cards">
-          <div class="card">
-            <div class="card-icon">💳</div>
-            <h3>Education Loan</h3>
-            <p>
-              Assistance in exploring education loan options,
-              understanding documentation and navigating the
-              application process with banks and financial institutions.
-            </p>
-          </div>
+<div class="ft" style="background:#082F56;color:#F5F8F6;padding:48px">
+<div class="in grid g4" style="margin-bottom:24px">
+<div><div class="ph" style="width:140px;height:44px;margin-bottom:12px">[LOGO]</div><p>Wz- 559 A/1, 1st Floor, Naraina Village, New Delhi - 110028<br>Phone: <a href="tel:+918750082588" style="color:inherit">8750082588</a><br>Email: <a href="mailto:raunakanand@educover.in" style="color:inherit">raunakanand@educover.in</a></p></div>
+<div><h3>Services</h3><p>Education Loan<br>Visa Assistance<br>Admission Support</p></div>
+<div><h3>Company</h3><p>About &amp; Team<br>Success Stories<br>Resources<br>Contact</p></div>
+<div><h3>Legal</h3><p>Privacy Policy<br>Terms &amp; Disclaimer</p></div>
+</div>
+<p class="in" style="font-size:14px;color:#F5F8F6">[Disclaimer: Educover is a loan assistance consultancy; loans are sanctioned by partner banks and NBFCs, subject to their terms.] · Sticky WhatsApp button on every page</p>
+</div>
 
-          <div class="card">
-            <div class="card-icon">✈️</div>
-            <h3>Visa Assistance</h3>
-            <p>
-              Guidance with student visa documentation,
-              application preparation and understanding
-              the relevant process for your destination.
-            </p>
-          </div>
+</div>
+<a class="wa" href="https://wa.me/918750082588" aria-label="Chat with Educover on WhatsApp">WhatsApp us</a>
 
-          <div class="card">
-            <div class="card-icon">🏫</div>
-            <h3>Admission Support</h3>
-            <p>
-              Support with understanding admission requirements,
-              preparing documents and planning your
-              education application journey.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">📚</div>
-            <h3>Financial Guidance</h3>
-            <p>
-              Understand education-related expenses and
-              explore financing possibilities that may
-              suit your academic plans.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🌐</div>
-            <h3>Study Abroad Planning</h3>
-            <p>
-              Guidance for students considering international
-              education, including planning and preparation
-              for their next steps.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🤝</div>
-            <h3>Student Support</h3>
-            <p>
-              Get assistance and guidance throughout your
-              education planning journey, from initial
-              questions to application preparation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft-section" id="process">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>How It Works</h2>
-          <p>
-            A simple process to help you understand your options
-            and move ahead with your education plans.
-          </p>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Connect With Us</h3>
-            <p>
-              Tell us about your course, college and education goals.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Understand Your Needs</h3>
-            <p>
-              We help you understand the available support
-              and documentation requirements.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Prepare Documents</h3>
-            <p>
-              Get guidance on preparing the documents
-              required for your application.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3>Move Forward</h3>
-            <p>
-              Take the next step in your education journey
-              with informed guidance.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="countries">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Explore Study Destinations</h2>
-          <p>
-            Planning to study in India or explore opportunities abroad?
-            Start by understanding your options.
-          </p>
-        </div>
-
-        <div class="destinations">
-          <div class="destination">🇮🇳 India</div>
-          <div class="destination">🇺🇸 United States</div>
-          <div class="destination">🇬🇧 United Kingdom</div>
-          <div class="destination">🇨🇦 Canada</div>
-          <div class="destination">🇦🇺 Australia</div>
-          <div class="destination">🇩🇪 Germany</div>
-          <div class="destination">🇮🇪 Ireland</div>
-          <div class="destination">🇳🇿 New Zealand</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft-section" id="about">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>About Educover</h2>
-          <p>
-            We believe that financial and application-related
-            confusion should not stop students from planning
-            their education goals.
-          </p>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <div class="card-icon">🎯</div>
-            <h3>Our Mission</h3>
-            <p>
-              To help students understand education financing,
-              admission and visa processes through accessible guidance.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">💡</div>
-            <h3>Our Approach</h3>
-            <p>
-              We focus on clear communication, practical information
-              and student-focused support.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🌱</div>
-            <h3>Your Future</h3>
-            <p>
-              We want students to make informed decisions
-              as they prepare for their academic journey.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="cta">
-          <h2>Ready to Plan Your Education?</h2>
-          <p>
-            Have questions about education loans, admissions
-            or visa assistance? Connect with Educover
-            and discuss your next steps.
-          </p>
-          <a class="btn" href="#contact">Contact Educover</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Contact Us</h2>
-          <p>
-            Get in touch with our team for education loan,
-            admission and visa assistance.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Get In Touch</h3>
-
-            <div class="contact-item">
-              <strong>📞 Phone</strong>
-              <a href="tel:+918750082588">8750082588</a>
-            </div>
-
-            <div class="contact-item">
-              <strong>✉️ Email</strong>
-              <a href="mailto:raunakanand@educover.in">
-                raunakanand@educover.in
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <strong>📍 Office Address</strong>
-              <p>
-                Wz- 559 A/1, 1st Floor,<br>
-                Naraina Village,<br>
-                New Delhi - 110028
-              </p>
-            </div>
-
-            <a
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener"
-              href="https://www.google.com/maps/search/?api=1&query=Wz-559+A%2F1+1st+Floor+Naraina+Village+New+Delhi+110028"
-            >
-              Get Directions
-            </a>
-          </div>
-
-          <form class="contact-form" id="contactForm">
-            <h3>Send an Enquiry</h3>
-
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                required
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Enter your phone number"
-                required
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="service">Interested In</label>
-              <select id="service" name="service" required>
-                <option value="">Select a service</option>
-                <option>Education Loan</option>
-                <option>Visa Assistance</option>
-                <option>Admission Support</option>
-                <option>Study Abroad Guidance</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us how we can help"
-                required
-              ></textarea>
-            </div>
-
-            <button class="btn btn-primary" type="submit">
-              Send Enquiry on WhatsApp
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="foot">
-        <div>
-          <a class="brand" href="#home">
-            <span class="mark">E</span> Educover
-          </a>
-
-          <p>
-            Education loan, visa and admission support
-            for students studying in India and abroad.
-          </p>
-
-          <p>
-            <strong>Phone:</strong><br>
-            <a href="tel:+918750082588">8750082588</a>
-          </p>
-
-          <p>
-            <strong>Email:</strong><br>
-            <a href="mailto:raunakanand@educover.in">
-              raunakanand@educover.in
-            </a>
-          </p>
-
-          <p>
-            <strong>Office Address:</strong><br>
-            Wz- 559 A/1, 1st Floor,<br>
-            Naraina Village,<br>
-            New Delhi - 110028
-          </p>
-        </div>
-
-        <div>
-          <h3>Services</h3>
-          <p><a href="#services">Education Loan</a></p>
-          <p><a href="#services">Visa Assistance</a></p>
-          <p><a href="#services">Admission Support</a></p>
-          <p><a href="#services">Study Abroad Planning</a></p>
-        </div>
-
-        <div>
-          <h3>Company</h3>
-          <p><a href="#about">About Us</a></p>
-          <p><a href="#process">How It Works</a></p>
-          <p><a href="#contact">Contact Us</a></p>
-        </div>
-
-        <div>
-          <h3>Explore</h3>
-          <p><a href="#countries">Study Destinations</a></p>
-          <p><a href="#contact">Get Started</a></p>
-        </div>
-      </div>
-
-      <div class="fine">
-        Disclaimer: Educover provides education loan assistance,
-        visa guidance and admission support. Loans are sanctioned
-        by banks and NBFCs subject to their eligibility criteria
-        and terms and conditions.
-        <br><br>
-        © 2026 Educover. All Rights Reserved.
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const contactForm = document.getElementById("contactForm");
-
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const service = document.getElementById("service").value;
-      const message = document.getElementById("message").value.trim();
-
-      const whatsappNumber = "918750082588";
-
-      const whatsappMessage =
-        "Hello Educover,%0A%0A" +
-        "I would like to enquire about your services.%0A%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Phone: " + encodeURIComponent(phone) + "%0A" +
-        "Email: " + encodeURIComponent(email) + "%0A" +
-        "Service: " + encodeURIComponent(service) + "%0A" +
-        "Message: " + encodeURIComponent(message);
-
-      const whatsappURL =
-        "https://wa.me/" + whatsappNumber +
-        "?text=" + whatsappMessage;
-
-      window.open(whatsappURL, "_blank");
-    });
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
